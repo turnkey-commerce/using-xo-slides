@@ -48,3 +48,27 @@ figcaption {
     caption-side: top;
     font-size: 16pt;
 }
+
+#cover p {
+    color: #FFF;
+    font-size: 30px;
+    line-height: 20px;
+}
+
+#cover h2 {
+    background: rgba(0, 0, 0, 0);
+    color: #FFF;
+    line-height: 54px !important;
+    font-size: 50px !important;
+}
+
+#cover h3 {
+    position: absolute;
+    top: 350px;
+    left: 0;
+    padding: 9px 0 0 104px;
+    background: rgba(0, 0, 0, 0.2);
+    color: #FFF;
+    line-height: 54px;
+    font-size: 40px;
+}
