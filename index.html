@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Go Code for SQL DAL Generation</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css">
+	<style>
+		#two-column ul {
+			columns: 2;
+			-webkit-columns: 2;
+			-moz-columns: 2;
+		}
+		
+		code {
+			font-size: 14pt;
+			line-height: 10px;
+			margin: 10px;
+		}
+
+		h2 {
+			font-size: 24pt;
+			margin: 0px;
+		}
+		
+		h3 {
+			margin: 10px;
+			line-height: 20px;
+		}
+		
+		ul li {
+			margin-left: 1em;
+			line-height: 35px;
+		}
+		
+		ul {
+			list-style: outside bullet;
+			margin-bottom: 5px;
+		}
+		
+		h3 {
+			color: darkslateblue;
+			font-size: larger;
+			font-weight: bold
+		}
+
+		.slide ul, ol {
+			padding-left: 0;
+			margin-top: 0;
+			margin-bottom: 5px;
+		}
+
+		figcaption {
+			margin-top: -10px;
+			margin-bottom: -5px;
+			caption-side: top;
+			font-size: 16pt;
+		}
+	</style>
+</head>
+
+<body class="shower full">
+	<header class="caption">
+		<h1>Go Code for SQL DAL Generation</h1>
+		<p>James Culbertson, Houston Golang Meetup, October 18, 2018</p>
+	</header>
+	<section class="slide black" id="cover">
+		<header>
+			<h2>xo - CLI to Generate Idiomatic<br/>Go Code for SQL Databases </h2>
+			<ul>
+				<ul>
+					<p>James Culbertson</p>
+				</ul>
+			</ul>
+			<h3>
+				Houston Golang Meetup<br> October 18, 2018 
+			</h3>
+			
+		</header>
+		<img style="margin-left: 300px;" class="cover" src="pictures/gopher_mohawk_corporate.png" alt="Corporate Mohawk Gopher">
+		
+		<style>
+			#cover p {
+				color: #FFF;
+				font-size: 30px;
+				line-height: 20px;
+			}
+			
+			#cover h2 {
+				background: rgba(0, 0, 0, 0);
+				color: #FFF;
+				line-height: 54px;
+				font-size: 50px;
+			}
+			
+			#cover h3 {
+				position: absolute;
+				top: 350px;
+				left: 0;
+				padding: 9px 0 0 104px;
+				background: rgba(0, 0, 0, 0.2);
+				color: #FFF;
+				line-height: 54px;
+				font-size: 40px;
+			}
+		</style>
+	</section>
+	<section class="slide">
+		<h2>SQL Database Access Options</h2>
+		<ul>
+			<li>Manual Coding of Database Access</li>
+			<li>Extender Libraries and Query Builders
+				<ul>
+					<li>sqlx</li>
+					<li>Squirrel</li>
+				</ul>
+			</li>
+			<li>ORM Libraries
+				<ul>
+					<li>GORM</li>
+					<li>SQL Boiler</li>
+				</ul>
+			</li>
+			<li>DAL Generators
+				<ul>
+					<li>xo</li>
+				</ul>
+			</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Manual Coding of Database Access</h2>
+		<ul>
+			<li>Built on interfaces provided by the standard "database/sql" package along with the DB-specific client driver</li>
+		</ul>
+		<h3>Pros</h3>
+		<ul>
+			<li>Efficient code at runtime</li>
+			<li>High level of control and flexibility of the implementation</li>
+		</ul>
+		<h3>Cons</h3>
+		<ul>
+			<li>Lots of manual boilerplate code to write</li>
+			<li>Must manually write the SQL code</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Manual Coding Example</h2>
+		<figure>
+			<figcaption>Imports</figcaption>
+			<img src="pictures/code_example_imports.png" alt="Database Imports">
+		</figure>
+		<figure>
+			<figcaption>Query</figcaption>
+			<img src="pictures/code_example_manual.png" alt="Manual Access">	
+		</figure>
+		
+	</section>
+	<section class="slide">
+		<h2>Extender and Query Builder Libraries</h2>
+		<ul>
+			<li>Extend "database/sql" to provide higher-level abstractions and tools to make data access easier</li>
+			<li>Build SQL queries from composable parts</li>
+		</ul>
+		<h3>Pros</h3>
+		<ul>
+			<li>High level of control and flexibility of the implementation</li>
+			<li>Easier Implementation</li>
+			<li>Less Boilerplate</li>
+		</ul>
+		<h3>Cons</h3>
+		<ul>
+			<li>Must manually write the SQL code</li>
+			<li>Some performance penalty on packages that use reflection</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>ORM Libraries</h2>
+		<ul>
+			<li>Provide a "code-first" approach to developing data access</li>
+			<li>Some provide automatic migration</li>
+			<li>Easier to use</li>
+		</ul>
+		<h3>Pros</h3>
+		<ul>
+			<li>Easy to Use</li>
+			<li>Less Code to Write</li>
+		</ul>
+		<h3>Cons</h3>
+		<ul>
+			<li>Less Control of the Implementation</li>
+			<li>Biggest performance penalty of the options</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2 class="shout">Q and A</h2>
+		<h3>URL for Slides: <a href="https://goo.gl/JuyhtC">https://goo.gl/JuyhtC</a></h3>
+	</section>
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"></div>
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2018 Yours Truly, Famous Inc. -->
+</body>
+
+</html>
