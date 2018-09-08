@@ -19,6 +19,11 @@
 			line-height: 10px;
 			margin: 10px;
 		}
+
+		h2 {
+			font-size: 24pt;
+			margin: 0px;
+		}
 		
 		h3 {
 			margin: 10px;
@@ -27,17 +32,31 @@
 		
 		ul li {
 			margin-left: 1em;
-			line-height: 40px;
+			line-height: 35px;
 		}
 		
 		ul {
 			list-style: outside bullet;
+			margin-bottom: 5px;
 		}
 		
 		h3 {
 			color: darkslateblue;
 			font-size: larger;
 			font-weight: bold
+		}
+
+		.slide ul, ol {
+			padding-left: 0;
+			margin-top: 0;
+			margin-bottom: 5px;
+		}
+
+		figcaption {
+			margin-top: -10px;
+			margin-bottom: -5px;
+			caption-side: top;
+			font-size: 16pt;
 		}
 	</style>
 </head>
@@ -49,7 +68,7 @@
 	</header>
 	<section class="slide black" id="cover">
 		<header>
-			<h2>XO - CLI to Generate Idiomatic<br/>Go Code for SQL Databases </h2>
+			<h2>xo - CLI to Generate Idiomatic<br/>Go Code for SQL Databases </h2>
 			<ul>
 				<ul>
 					<p>James Culbertson</p>
@@ -106,7 +125,7 @@
 			</li>
 			<li>DAL Generators
 				<ul>
-					<li>XO</li>
+					<li>xo</li>
 				</ul>
 			</li>
 		</ul>
@@ -128,13 +147,23 @@
 		</ul>
 	</section>
 	<section class="slide">
+		<h2>Manual Coding Example</h2>
+		<figure>
+			<figcaption>Imports</figcaption>
+			<img src="pictures/code_example_imports.png" alt="Database Imports">
+		</figure>
+		<figure>
+			<figcaption>Query</figcaption>
+			<img src="pictures/code_example_manual.png" alt="Manual Access">	
+		</figure>
+		
+	</section>
+	<section class="slide">
 		<h2>Extender and Query Builder Libraries</h2>
-		<ol>
-			<ul>
-				<li>Extend "database/sql" to provide higher-level abstractions and tools to make data access easier</li>
-				<li>Build SQL queries from composable parts</li>
-			</ul>
-		</ol>
+		<ul>
+			<li>Extend "database/sql" to provide higher-level abstractions and tools to make data access easier</li>
+			<li>Build SQL queries from composable parts</li>
+		</ul>
 		<h3>Pros</h3>
 		<ul>
 			<li>High level of control and flexibility of the implementation</li>
@@ -149,13 +178,11 @@
 	</section>
 	<section class="slide">
 		<h2>ORM Libraries</h2>
-		<ol>
-			<ul>
-				<li>Provide a "code-first" approach to developing data access</li>
-				<li>Some provide automatic migration</li>
-				<li>Easier to use</li>
-			</ul>
-		</ol>
+		<ul>
+			<li>Provide a "code-first" approach to developing data access</li>
+			<li>Some provide automatic migration</li>
+			<li>Easier to use</li>
+		</ul>
 		<h3>Pros</h3>
 		<ul>
 			<li>Easy to Use</li>
