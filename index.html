@@ -18,10 +18,12 @@
 	<section class="slide black" id="cover">
 		<script>
 			// Workaround to ensure css loads properly
-			if (location.href.indexOf('reload')==-1)
-			{
-				location.href=location.href+'?reload';
-			}
+			setTimeout(function () {
+				if (location.href.indexOf('reload')==-1)
+				{
+					location.href=location.href+'?reload';
+				}
+			}, 3000);
 		</script>
 		<header>
 			<h2>xo - CLI to Generate Idiomatic<br/>Go Code for SQL Databases </h2>
