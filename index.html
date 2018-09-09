@@ -36,15 +36,16 @@
 					<li>Squirrel</li>
 				</ul>
 			</li>
-			<li>ORM Libraries
+			<li>Object-Relational Mappers (ORM) Libraries
 				<ul>
 					<li>GORM</li>
 					<li>SQL Boiler</li>
 				</ul>
 			</li>
-			<li>DAL Generators
+			<li>Data Access Layer (DAL) Generators
 				<ul>
 					<li>xo</li>
+					<li>GNORM</li>
 				</ul>
 			</li>
 		</ul>
@@ -69,53 +70,100 @@
 		<h2>Manual Coding Example</h2>
 		<figure>
 			<figcaption>Imports</figcaption>
-			<img src="pictures/code_example_imports.png" alt="Database Imports">
+			<img src="pictures/code_example_imports.png" alt="Database Imports" width="500">
 		</figure>
 		<figure>
 			<figcaption>Query</figcaption>
-			<img src="pictures/code_example_manual.png" alt="Manual Access">	
+			<img src="pictures/code_example_manual.png" alt="Manual Access" width="700">	
 		</figure>
 		
 	</section>
 	<section class="slide">
-		<h2>Extender and Query Builder Libraries</h2>
+		<h2>Extenders and Query Builder Libraries</h2>
 		<ul>
-			<li>Extend "database/sql" to provide higher-level abstractions and tools to make data access easier</li>
-			<li>Build SQL queries from composable parts</li>
+			<li>Extends "database/sql" to provide higher-level abstractions and tools to make data access easier</li>
+			<li>Can build SQL queries from composable parts</li>
 		</ul>
 		<h3>Pros</h3>
 		<ul>
-			<li>High level of control and flexibility of the implementation</li>
-			<li>Easier Implementation</li>
-			<li>Less Boilerplate</li>
+			<li>Higher level of control and flexibility of the implementation</li>
+			<li>Less boilerplate</li>
+			<li>Abstracts out some of the database-specific quirks</li>
 		</ul>
 		<h3>Cons</h3>
 		<ul>
-			<li>Must manually write the SQL code</li>
-			<li>Some performance penalty on packages that use reflection</li>
+			<li>Must manually write the SQL code (extenders)</li>
+			<li>Some performance penalty on packages that use reflection (query builders)</li>
 		</ul>
+	</section>
+	<section class="slide">
+		<h2>Extenders/Query Builders Examples</h2>
+		<figure>
+			<figcaption>sqlx extender</figcaption>
+			<img src="pictures/code_example_sqlx.png" alt="Database Imports" width="800">
+		</figure>
+		<figure>
+			<figcaption>Squirrel Query Builder</figcaption>
+			<img src="pictures/code_example_squirrel.png" alt="Manual Access" width="600">	
+		</figure>
 	</section>
 	<section class="slide">
 		<h2>ORM Libraries</h2>
 		<ul>
-			<li>Provide a "code-first" approach to developing data access</li>
+			<li>Provides a "code-first" approach to developing data access</li>
 			<li>Some provide automatic migration</li>
-			<li>Easier to use</li>
 		</ul>
 		<h3>Pros</h3>
 		<ul>
-			<li>Easy to Use</li>
-			<li>Less Code to Write</li>
+			<li>Easier to Use</li>
+			<li>No boilerplate code</li>
+			<li>Abstracts the database type</li>
 		</ul>
 		<h3>Cons</h3>
 		<ul>
 			<li>Less Control of the Implementation</li>
-			<li>Biggest performance penalty of the options</li>
+			<li>Biggest performance penalty of the various options</li>
 		</ul>
 	</section>
 	<section class="slide">
+		<h2>ORM Example</h2>
+		<figure>
+			<figcaption>GORM</figcaption>
+			<img src="pictures/code_example_gorm.png" alt="GORM Example" width="600">
+		</figure>
+	</section>
+	<section class="slide">
+		<h2>DAL Generators</h2>
+		<ul>
+			<li>Provides a "database-first" approach to developing data access</li>
+			<li>Generates models and database access code</li>
+		</ul>
+		<h3>Pros</h3>
+		<ul>
+			<li>Easy to Use</li>
+			<li>Boiler plate code automatically generated</li>
+			<li>Templates can extend and customize generated code</li>
+			<li>As performant as manually-generated code</li>
+		</ul>
+		<h3>Cons</h3>
+		<ul>
+			<li>Github repositories not as actively supported</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>How DAL Generators Work</h2>
+		<ol>
+			<li>The user initiates generation from the CLI with connection info.</li>
+			<li>The generator analyzes the schema of the database.</li>
+			<li>The generator creates an abstract model of the schema.</li>
+			<li>The generator uses its own and/or user-provided templates to generate the models and data access code.</li>
+			<li>The user imports the generated code to use the models and call the data access functions.</li>
+			<li>The user repeats the generation when the database schema or templates are changed.</li>
+		</ol>
+	</section>
+	<section class="slide">
 		<h2 class="shout">Q and A</h2>
-		<h3>URL for Slides: <a href="https://goo.gl/JuyhtC">https://goo.gl/JuyhtC</a></h3>
+		<h3>URL for Slides: <a href="https://goo.gl/fa8d8d">https://goo.gl/fa8d8d</a></h3>
 	</section>
 	<!--
 		To hide progress bar from entire presentation
