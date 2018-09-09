@@ -11,7 +11,7 @@ code {
 }
 
 h2 {
-    font-size: 24pt;
+    font-size: 30pt !important;
     margin: 0px;
 }
 
@@ -59,7 +59,7 @@ figcaption {
     background: rgba(0, 0, 0, 0);
     color: #FFF;
     line-height: 50px;
-    font-size: 45px;
+    font-size: 32pt !important;
 }
 
 .author {
