@@ -151,19 +151,47 @@
 		</ul>
 	</section>
 	<section class="slide">
+		<h2>DAL Generator Example</h2>
+		<figure>
+			<figcaption>xo Model</figcaption>
+			<img src="pictures/code_example_xo_model.png" alt="xo Model" width="400">
+		</figure>
+		<figure>
+			<figcaption>xo Insert</figcaption>
+			<img src="pictures/code_example_xo_query.png" alt="GORM Example" width="400">
+		</figure>
+	</section>
+	<section class="slide">
 		<h2>How DAL Generators Work</h2>
 		<ol>
-			<li>The user initiates generation from the CLI with connection info.</li>
+			<li>The user initiates generation from the CLI with the DB connection info.</li>
 			<li>The generator analyzes the schema of the database.</li>
 			<li>The generator creates an abstract model of the schema.</li>
-			<li>The generator uses its own and/or user-provided templates to generate the models and data access code.</li>
+			<li>The generator uses pre-packaged and/or user-provided templates to generate the models and data access code.</li>
 			<li>The user imports the generated code to use the models and call the data access functions.</li>
 			<li>The user repeats the generation when the database schema or templates are changed.</li>
 		</ol>
 	</section>
 	<section class="slide">
+		<h2>gendal</h2>
+		<ul>
+			<li>Fork of xo to provide more timely action on PR's and issues</li>
+			<li>Adds support for CockroachDB</li>
+			<li>Packages are now versioned with dep</li>
+			<li>Releases are formalized and tags</li>
+		</ul>
+		<p>Available on Github at <b>turnkey-commerce/gendal</b></p>
+	</section>
+	<section class="slide">
+		<h2 class="shout">Demo</h2>
+	</section>
+	<section class="slide">
 		<h2 class="shout">Q and A</h2>
-		<h3>URL for Slides: <a href="https://goo.gl/fa8d8d">https://goo.gl/fa8d8d</a></h3>
+	</section>
+	<section class="slide">
+		<h3>Slides: <a href="https://goo.gl/fa8d8d">https://goo.gl/fa8d8d</a></h3>
+		<h3>xo: <a href="https://github.com/xo/xo">https://github.com/xo/xo</a></h3>
+		<h3>gendal: <a href="https://github.com/turnkey-commerce/gendal">https://github.com/turnkey-commerce/gendal</a></h3>
 	</section>
 	<!--
 		To hide progress bar from entire presentation

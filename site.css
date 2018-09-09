@@ -16,14 +16,14 @@ h2 {
 }
 
 h3 {
-    margin: 10px;
+    margin-bottom: 10px;
     line-height: 20px;
 }
 
 ul li {
     margin-left: 1em;
     line-height: 30px;
-    padding-bottom: 5px;
+    padding-bottom: 0px;
 }
 
 ol li {
@@ -82,4 +82,8 @@ figcaption {
     color: #FFF;
     line-height: 54px;
     font-size: 40px;
+}
+
+.slide .shout {
+    font-size: 100px !important;
 }
