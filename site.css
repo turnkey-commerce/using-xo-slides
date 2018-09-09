@@ -11,7 +11,7 @@ code {
 }
 
 h2 {
-    font-size: 24pt;
+    font-size: 30pt !important;
     margin: 0px;
 }
 
@@ -22,7 +22,14 @@ h3 {
 
 ul li {
     margin-left: 1em;
-    line-height: 35px;
+    line-height: 30px;
+    padding-bottom: 5px;
+}
+
+ol li {
+    margin-left: 1em;
+    line-height: 30px;
+    padding-bottom: 5px;
 }
 
 ul {
@@ -59,7 +66,7 @@ figcaption {
     background: rgba(0, 0, 0, 0);
     color: #FFF;
     line-height: 50px;
-    font-size: 45px;
+    font-size: 32pt !important;
 }
 
 .author {
