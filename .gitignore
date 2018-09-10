@@ -1,3 +1,7 @@
 node_modules
 prepared
 archive.zip
+demo/.vagrant
+demo/ubuntu-xenial-16.04-cloudimg-console.log
+demo/certs
+demo/my-safe-directory
