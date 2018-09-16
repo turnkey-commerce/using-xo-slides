@@ -1,0 +1,3 @@
+Command to build including the templates
+
+gendal pgsql://booktest:booktest@localhost/booktest?sslmode=disable -o models --template-path templates/
