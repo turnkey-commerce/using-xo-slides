@@ -87,3 +87,10 @@ figcaption {
 .slide .shout {
     font-size: 100px !important;
 }
+
+.small {
+    font-size: 17px;
+    padding: 0px;
+    margin: 0px;
+    font-family: Consolas, monospace !important;
+}

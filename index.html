@@ -7,7 +7,7 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/styles.css">
-	<link rel="stylesheet" href="site.css?v=2">
+	<link rel="stylesheet" href="site.css?v=3">
 </head>
 
 <body class="shower full">
@@ -63,7 +63,8 @@
 		<h3>Cons</h3>
 		<ul>
 			<li>Lots of manual boilerplate code to write</li>
-			<li>Must manually write the SQL code</li>
+			<li>Must manually write a lot of SQL code</li>
+			<li>Can be prone to security issues</li>
 		</ul>
 	</section>
 	<section class="slide">
@@ -73,7 +74,7 @@
 			<img src="pictures/code_example_imports.png" alt="Database Imports" width="500">
 		</figure>
 		<figure>
-			<figcaption>Query</figcaption>
+			<figcaption>Typical Query</figcaption>
 			<img src="pictures/code_example_manual.png" alt="Manual Access" width="700">	
 		</figure>
 		
@@ -147,35 +148,68 @@
 		</ul>
 		<h3>Cons</h3>
 		<ul>
-			<li>Github repositories not as actively supported</li>
+			<li>Less Active Support on the Github Repositories</li>
 		</ul>
 	</section>
 	<section class="slide">
 		<h2>DAL Generator Example</h2>
 		<figure>
-			<figcaption>xo Model</figcaption>
+			<figcaption>Generated Model</figcaption>
 			<img src="pictures/code_example_xo_model.png" alt="xo Model" width="400">
 		</figure>
 		<figure>
-			<figcaption>xo Insert</figcaption>
+			<figcaption>Generated Insert Method</figcaption>
 			<img src="pictures/code_example_xo_query.png" alt="GORM Example" width="400">
 		</figure>
 	</section>
 	<section class="slide">
 		<h2>How DAL Generators Work</h2>
 		<ol>
-			<li>The user initiates generation from the CLI with the DB connection info.</li>
+			<li>The dev or DBA creates the application database.</li>
+			<li>The dev initiates generation from the CLI with the database connection URL and other arguments.</li>
 			<li>The generator analyzes the schema of the database.</li>
-			<li>The generator creates an abstract model of the schema.</li>
+			<li>The generator loads an internal model of the schema.</li>
 			<li>The generator uses pre-packaged and/or user-provided templates to generate the models and data access code.</li>
-			<li>The user imports the generated code to use the models and call the data access functions.</li>
-			<li>The user repeats the generation when the database schema or templates are changed.</li>
 		</ol>
+	</section>
+	<section class="slide">
+		<h2>Using the Generator</h2>
+		<h3>Simple Case</h3>
+		<div class="small">
+			$ mkdir models<br/>
+			$ xo postgres://user:pass@host/dbname -o models
+		</div>
+		<h3>Custom Templates With Verbose Mode</h3>
+		<div class="small">
+		    $ mkdir sqliteModels<br/>
+			$ xo sqlite3://dbname.db -v -o sqliteModels --template-path /custom/templates
+		</div>
+		<p>Many other command line options are available.</p>
+	</section>
+	<section class="slide">
+		<h2>Using the Generated Code</h2>
+		<div class="columns two">
+			<div>
+				<ol>
+					<li>Import the generated code to use the models and call the data access methods.</li>
+					<li>Repeat the generation when the database schema or templates have changed.</li>
+				</ol>
+			</div>
+			<div>
+				<img src="pictures/code_example_use_model.png" alt="GORM Example" width=300">
+			</div>
+		</div>
+	</section>
+	<section class="slide">
+		<h2>Template Example</h2>
+		<figure>
+			<img src="pictures/code_example_template.png" alt="xo Model" width="700">
+		</figure>
 	</section>
 	<section class="slide">
 		<h2>gendal</h2>
 		<ul>
-			<li>Fork of xo to provide more timely action on PR's and issues</li>
+			<li>Fork of xo to provide support on PR's and issues</li>
 			<li>Adds support for CockroachDB</li>
 			<li>Packages are now versioned with dep</li>
 			<li>Releases are formalized and tagged</li>
@@ -190,7 +224,7 @@
 		</figure>
 	</section>
 	<section class="slide">
-		<h2 class="shout">Demo</h2>
+		<h2 class="shout">Demos</h2>
 	</section>
 	<section class="slide">
 		<h2 class="shout">Q and A</h2>
