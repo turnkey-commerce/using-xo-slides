@@ -7,4 +7,4 @@ Include the templates:
 gendal pgsql://booktest:booktest@localhost/booktest?sslmode=disable -o models --template-path templates/
 
 Custom Query:
-gendal pgsql://booktest:booktest@localhost/booktest?sslmode=disable -o models --template-path templates/ -N -M -B -T AuthorResult < custom-query.sql
+gendal pgsql://booktest:booktest@localhost/booktest?sslmode=disable -o models --template-path templates/ -N -M -B -T AuthorBookResult < custom-query.sql
