@@ -34,3 +34,13 @@ Demo 4 - Add a custom type and query via SQL.
 4) View the new model in vsscode 
 
 
+Commands to run gendal
+
+Simple with verbose:
+gendal pgsql://booktest:booktest@localhost/booktest?sslmode=disable -v -o models
+
+Include the templates:
+gendal pgsql://booktest:booktest@localhost/booktest?sslmode=disable -o models --template-path templates/
+
+Custom Query:
+gendal pgsql://booktest:booktest@localhost/booktest?sslmode=disable -o models --template-path templates/ -N -M -B -T AuthorBookResult < custom-query.sql
