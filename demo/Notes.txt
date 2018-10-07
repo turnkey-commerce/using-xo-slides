@@ -1,3 +1,36 @@
-Command to build including the templates
+Demo Details
 
-gendal pgsql://booktest:booktest@localhost/booktest?sslmode=disable -o models --template-path templates/
+Demo 1 - Generate code and use of generated code.
+1) Select demo1 branch in vscode, delete the models folder
+2) View booktest Database in pgAdmin
+3) Script gendal to create the models:
+    gendal pgsql://booktest:booktest@localhost/booktest?sslmode=disable -o models
+4) View the models in vscode and the main.go/actions.go.
+5) Build the go program and run it with the -v option.
+6) Refresh database in pgAdmin.
+
+Demo 2 - Change the schema and regenerate code.
+1) Select demo2 branch in vscode, keep the models folder.
+2) Run the add_author_country.sql in pgadmin. View the change in the schema.
+3) Script gendal to update the models:
+    gendal pgsql://booktest:booktest@localhost/booktest?sslmode=disable -v -o models
+4) View the changed model in vscode.
+5) Build the go program and run it with the -v option.
+6) Refresh the database in pgAdmin.
+
+Demo 3 - Customize a template to add a new method.
+1) Select demo3 branch in vscode, keep the models folder.
+2) Browse the templates folder in vscode, select the postgres.type.go.tpl and scroll to the bottom.
+3) Script gendal to update the models with custome templates:
+    gendal pgsql://booktest:booktest@localhost/booktest?sslmode=disable -o models --template-path templates/
+4) View the changed model in vscode.
+5) Build the go program and run it with the -v option.
+
+Demo 4 - Add a custom type and query via SQL.
+1) Select demo4 branch in vscode, keep the models folder.
+2) View the custom-query.sql file to show the join squery.
+3) Script gendal to update the models with custome templates:
+    gendal pgsql://booktest:booktest@localhost/booktest?sslmode=disable -o models --template-path templates/ -N -B -T AuthorBookResult < custom-query.sql
+4) View the new model in vsscode 
+
+

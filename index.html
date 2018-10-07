@@ -227,6 +227,55 @@
 		<h2 class="shout">Demos</h2>
 	</section>
 	<section class="slide">
+		<h2>Demo 1 - Generate and Use Data Access Code</h2>
+		<ul>
+			<li>Build fresh database</li>
+			<li>Generate models</li>
+		</ul>
+		<div class="small">gendal pgsql://booktest:booktest@localhost/booktest?sslmode=disable -o models</div>
+		<ul>
+			<li>Create code to use models</li>
+			<li>Build and run go code</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Demo 2 - Adapt to Schema Change</h2>
+		<ul>
+			<li>Update database schema</li>
+			<li>Generate models</li>
+		</ul>
+		<div class="small">gendal pgsql://booktest:booktest@localhost/booktest?sslmode=disable -o models</div>
+		<ul>
+			<li>Build and run go code</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Demo 3 - Customize Template to Add a New Access Method</h2>
+		<ul>
+			<li>Copy templates to Local</li>
+			<li>Modify template</li>
+			<li>Generate models</li>
+		</ul>
+		<div class="small">gendal pgsql://booktest:booktest@localhost/booktest?sslmode=disable -o models<br />--template-path templates/</div>
+		<ul>
+			<li>Update code to use template</li>
+			<li>Build and run code</li>
+		</ul>
+	</section>
+	<section class="slide">
+		<h2>Demo 4 - Custom Query for Custom Type</h2>
+		<ul>
+			<li>Add custom SQL query with join and where clause</li>
+			<li>Generate models</li>
+		</ul>
+		<div class="small">gendal pgsql://booktest:booktest@localhost/booktest?sslmode=disable -o models<br />
+			--template-path templates/ -N -B -T AuthorBookResult < custom-query.sql</div>
+		<ul>
+			<li>Update code to use new query</li>
+			<li>Build and run code</li>
+		</ul>
+	</section>
+	<section class="slide">
 		<h2 class="shout">Q and A</h2>
 	</section>
 	<section class="slide">
